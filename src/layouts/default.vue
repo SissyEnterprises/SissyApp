@@ -49,7 +49,12 @@
     </v-navigation-drawer>
 
     <v-navigation-drawer width="244" color="pink-lighten-1">
-      <v-sheet color="pink-darken-4" height="128" width="100%"></v-sheet>
+      <v-sheet color="pink-darken-4" height="128" width="100%">
+        <v-img
+          alt="Profile picture"
+          src="https://avatars.githubusercontent.com/u/81266695?v=4"
+        ></v-img
+      ></v-sheet>
 
       <v-list nav density="compact">
         <v-list-item title="Videos" link></v-list-item>
