@@ -61,10 +61,21 @@
         <v-list-item title="Images" link></v-list-item>
         <v-list-item title="Hypnosis" link></v-list-item>
         <v-list-item title="Tasks" link></v-list-item>
+        <v-divider class="mx-2 my-3"></v-divider>
+        <v-list-item title="Beginner" link></v-list-item>
+        <v-list-item title="Intermediate" link disabled></v-list-item>
+        <v-list-item title="Advanced" link disabled></v-list-item>
+        <v-list-item title="Master" link disabled></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar class="px-3" color="pink-lighten-2" height="72" flat>
+    <v-app-bar
+      class="px-3"
+      color="pink-lighten-2"
+      height="72"
+      flat
+      density="compact"
+    >
       <v-spacer></v-spacer>
 
       <v-responsive max-width="156">
@@ -95,7 +106,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-footer height="72" app color="pink-lighten-2">
+    <v-footer app color="pink-lighten-2">
       <v-text-field
         bg-color="pink-lighten-4"
         class="overflow-hidden"
