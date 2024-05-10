@@ -3,12 +3,9 @@
     <v-row>
       <v-col>
         <v-card color="pink">
-          <v-card-title>Hello!</v-card-title>
+          <v-card-title>Anal</v-card-title>
           <v-card-text>
-            <p>
-              This is an early work in progress of a complete rewrite of the
-              app.
-            </p>
+            <p>This is some text.</p>
           </v-card-text>
         </v-card>
       </v-col>

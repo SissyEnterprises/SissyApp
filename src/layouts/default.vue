@@ -1,19 +1,25 @@
 <template>
   <v-app id="kiss">
     <v-navigation-drawer color="pink-lighten-2" rail>
-      <v-btn icon class="d-block text-center mx-auto mt-4">
-        <v-avatar color="pink-darken-3" size="36"></v-avatar>
+      <v-btn
+        icon
+        class="d-block text-center mx-auto mt-4"
+        to="/profile"
+        size="small"
+      >
+        <v-avatar color="pink-darken-3"></v-avatar>
       </v-btn>
 
       <v-divider class="mx-3 my-5"></v-divider>
-      <template v-for="n in 6">
-        <v-tooltip :text="'Course' + n">
+      <template v-for="course in courses">
+        <v-tooltip :text="course.title">
           <template v-slot:activator="{ props }">
             <v-btn
               v-bind="props"
               icon
-              class="d-block text-center mx-auto mb-6"
-              size="small"
+              class="d-block text-center mx-auto mb-5"
+              size="x-small"
+              :to="course.to"
             >
               <v-avatar color="pink-darken-1" size="small"></v-avatar>
             </v-btn>
@@ -25,13 +31,11 @@
     <v-navigation-drawer width="244" color="pink-lighten-1">
       <v-sheet color="pink-darken-4" height="128" width="100%"></v-sheet>
 
-      <v-list nav>
-        <v-list-item
-          v-for="n in 5"
-          :key="n"
-          :title="`Item ${n}`"
-          link
-        ></v-list-item>
+      <v-list nav density="compact">
+        <v-list-item title="Videos" link></v-list-item>
+        <v-list-item title="Images" link></v-list-item>
+        <v-list-item title="Hypnosis" link></v-list-item>
+        <v-list-item title="Tasks" link></v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -80,3 +84,16 @@
     </v-footer>
   </v-app>
 </template>
+
+<script setup>
+const courses = [
+  {
+    title: "Anal",
+    to: "/course/anal",
+  },
+  {
+    title: "Cum",
+    to: "/course/cum",
+  },
+];
+</script>
