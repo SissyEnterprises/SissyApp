@@ -1,16 +1,11 @@
 <template>
   <v-app id="kiss">
     <v-navigation-drawer color="pink-lighten-2" rail>
-      <v-btn
-        icon
-        class="d-block text-center mx-auto mt-4"
-        to="/profile"
-        size="small"
-      >
+      <v-btn icon class="d-block text-center mx-auto mt-4" to="/" size="small">
         <v-avatar color="pink-darken-3"></v-avatar>
       </v-btn>
 
-      <v-divider class="mx-3 my-5"></v-divider>
+      <v-divider class="mx-2 my-3"></v-divider>
       <template v-for="course in courses">
         <v-tooltip :text="course.title">
           <template v-slot:activator="{ props }">
@@ -22,6 +17,22 @@
               :to="course.to"
             >
               <v-avatar color="pink-darken-1" size="small"></v-avatar>
+            </v-btn>
+          </template>
+        </v-tooltip>
+      </template>
+      <v-divider class="mx-2 my-3"></v-divider>
+      <template v-for="course in clubs">
+        <v-tooltip :text="course.title">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon
+              class="d-block text-center mx-auto mb-5"
+              size="x-small"
+              :to="course.to"
+            >
+              <v-avatar color="pink-lighten-1" size="small"></v-avatar>
             </v-btn>
           </template>
         </v-tooltip>
@@ -60,11 +71,11 @@
     </v-main>
 
     <v-navigation-drawer location="right" color="pink-lighten-3">
-      <v-list>
+      <v-list nav density="compact">
         <v-list-item
           v-for="n in 5"
           :key="n"
-          :title="`Item ${n}`"
+          :title="`Student ${n}`"
           link
         ></v-list-item>
       </v-list>
@@ -94,6 +105,36 @@ const courses = [
   {
     title: "Cum",
     to: "/course/cum",
+  },
+  {
+    title: "Submission",
+    to: "/course/cum",
+  },
+  {
+    title: "Speaking",
+    to: "/course/cum",
+  },
+  {
+    title: "Oral",
+    to: "/course/cum",
+  },
+  {
+    title: "Clothing",
+    to: "/course/cum",
+  },
+  {
+    title: "Media",
+    to: "/course/cum",
+  },
+];
+const clubs = [
+  {
+    title: "Maid",
+    to: "/course/anal",
+  },
+  {
+    title: "Stripping",
+    to: "/course/anal",
   },
 ];
 </script>
