@@ -2,7 +2,12 @@
   <v-app id="kiss">
     <v-navigation-drawer color="pink-lighten-2" rail>
       <v-btn icon class="d-block text-center mx-auto mt-4" to="/" size="small">
-        <v-avatar color="pink-darken-3"></v-avatar>
+        <v-avatar color="pink-darken-3">
+          <v-img
+            alt="Profile picture"
+            src="https://avatars.githubusercontent.com/u/81266695?v=4"
+          ></v-img>
+        </v-avatar>
       </v-btn>
 
       <v-divider class="mx-2 my-3"></v-divider>
@@ -16,7 +21,9 @@
               size="x-small"
               :to="course.to"
             >
-              <v-avatar color="pink-darken-1" size="small"></v-avatar>
+              <v-avatar color="pink-darken-1" size="small">
+                <v-img alt="Avatar" :src="course.avatar"></v-img
+              ></v-avatar>
             </v-btn>
           </template>
         </v-tooltip>
@@ -32,7 +39,9 @@
               size="x-small"
               :to="course.to"
             >
-              <v-avatar color="pink-lighten-1" size="small"></v-avatar>
+              <v-avatar color="pink-darken-1" size="small">
+                <v-img alt="Avatar" :src="course.avatar"></v-img
+              ></v-avatar>
             </v-btn>
           </template>
         </v-tooltip>
@@ -101,40 +110,57 @@ const courses = [
   {
     title: "Anal",
     to: "/course/anal",
+    avatar:
+      "https://ei.phncdn.com/videos/202308/17/437595011/original/(m=q2I79UYbeGNdHgaaaa)(mh=huTkoPz6RQj719WH)0.jpg",
   },
   {
     title: "Cum",
     to: "/course/cum",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERPcF1aVfTCc_C_KPEckw49W9ur7ZmQlWPLHoeJkTkA&s",
   },
   {
     title: "Submission",
     to: "/course/cum",
+    avatar:
+      "https://i.pinimg.com/originals/45/a5/c7/45a5c7baa07195f4b758461e13934d82.jpg",
   },
   {
     title: "Speaking",
     to: "/course/cum",
+    avatar:
+      "https://preview.redd.it/i-love-sissy-porn-captions-v0-s397fjq8wjk91.jpg?width=606&format=pjpg&auto=webp&s=dd3feaaf529a87dbb505e62827b9c643e7ff92ce",
   },
   {
     title: "Oral",
     to: "/course/cum",
+    avatar:
+      "https://ei.phncdn.com/videos/202107/18/391464631/original/(m=eGNdHgaaaa)(mh=26ijPwb7Idb1dMkk)7.jpg",
   },
   {
     title: "Clothing",
     to: "/course/cum",
+    avatar:
+      "https://i.pinimg.com/236x/e7/75/6c/e7756cd015c8fe1e645256002c37d4bf.jpg",
   },
   {
     title: "Media",
     to: "/course/cum",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTqjFAQW2pOTf4oC1OMzzfyhmWXantZh-5nE8JKljQXA&s",
   },
 ];
 const clubs = [
   {
     title: "Maid",
     to: "/course/anal",
+    avatar: "https://i.ebayimg.com/images/g/aK0AAOSwEelgRsa-/s-l1200.webp",
   },
   {
     title: "Stripping",
     to: "/course/anal",
+    avatar:
+      "https://ei.phncdn.com/videos/201908/02/239201581/original/(m=eaSaaTbaAaaaa)(mh=J9aR2b9xaLrwFiGc)12.jpg",
   },
 ];
 </script>
