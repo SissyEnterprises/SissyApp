@@ -1,5 +1,14 @@
 <template>
-  <div>
-    <h1>Hello!</h1>
-  </div>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-card color="pink">
+          <v-card-title>Hello!</v-card-title>
+          <v-card-text>
+            <p>This is some text.</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
