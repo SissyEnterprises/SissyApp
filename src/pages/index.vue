@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Helxlo!</h1>
-    <button @click="throw new Error('Some sentry error');">Error</button>
+    <h1>Hello!</h1>
   </div>
 </template>
