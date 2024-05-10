@@ -1,27 +1,31 @@
 <template>
   <v-app id="kiss">
     <v-navigation-drawer color="pink-lighten-2" rail>
-      <v-avatar
-        class="d-block text-center mx-auto mt-4"
-        color="pink-darken-3"
-        size="36"
-      ></v-avatar>
+      <v-btn icon class="d-block text-center mx-auto mt-4">
+        <v-avatar color="pink-darken-3" size="36"></v-avatar>
+      </v-btn>
 
       <v-divider class="mx-3 my-5"></v-divider>
-
-      <v-avatar
-        v-for="n in 6"
-        :key="n"
-        class="d-block text-center mx-auto mb-6"
-        color="pink-darken-1"
-        size="28"
-      ></v-avatar>
+      <template v-for="n in 6">
+        <v-tooltip :text="'Course' + n">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon
+              class="d-block text-center mx-auto mb-6"
+              size="small"
+            >
+              <v-avatar color="pink-darken-1" size="small"></v-avatar>
+            </v-btn>
+          </template>
+        </v-tooltip>
+      </template>
     </v-navigation-drawer>
 
     <v-navigation-drawer width="244" color="pink-lighten-1">
-      <v-sheet color="pink-lighten-4" height="128" width="100%"></v-sheet>
+      <v-sheet color="pink-darken-4" height="128" width="100%"></v-sheet>
 
-      <v-list>
+      <v-list nav>
         <v-list-item
           v-for="n in 5"
           :key="n"
@@ -31,7 +35,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar class="px-3" color="pink-lighten-3" height="72" flat>
+    <v-app-bar class="px-3" color="pink-lighten-2" height="72" flat>
       <v-spacer></v-spacer>
 
       <v-responsive max-width="156">
@@ -42,6 +46,7 @@
           variant="solo-filled"
           flat
           hide-details
+          placeholder="Search"
         ></v-text-field>
       </v-responsive>
     </v-app-bar>
@@ -50,7 +55,7 @@
       <NuxtPage></NuxtPage>
     </v-main>
 
-    <v-navigation-drawer location="right" color="pink-lighten-2">
+    <v-navigation-drawer location="right" color="pink-lighten-3">
       <v-list>
         <v-list-item
           v-for="n in 5"
