@@ -10,11 +10,13 @@
               app.
             </p>
             <iframe
-              src="/games/plugin/"
+              src="/games/plugin"
               width="800"
               height="600"
               frameborder="0"
               allowfullscreen
+              referrerpolicy="no-referrer"
+              sandbox="allow-same-origin allow-scripts"
             >
             </iframe>
           </v-card-text>
