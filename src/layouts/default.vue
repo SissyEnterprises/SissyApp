@@ -1,6 +1,6 @@
 <template>
   <v-app id="kiss">
-    <v-navigation-drawer color="pink-lighten-2" rail>
+    <v-navigation-drawer color="pink-lighten-2" rail permanent>
       <v-btn icon class="d-block text-center mx-auto mt-4" to="/" size="small">
         <v-avatar color="pink-darken-3">
           <v-img
@@ -46,9 +46,28 @@
           </template>
         </v-tooltip>
       </template>
+      <template #append>
+        <v-tooltip :text="panelExpanded ? 'Collapse' : 'Expand'">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              :icon="panelExpanded ? 'mdi-arrow-left' : 'mdi-arrow-right'"
+              class="d-block text-center mx-auto mb-5"
+              size="x-small"
+              @click="panelExpanded = !panelExpanded"
+            >
+            </v-btn>
+          </template>
+        </v-tooltip>
+      </template>
     </v-navigation-drawer>
 
-    <v-navigation-drawer width="244" color="pink-lighten-1">
+    <v-navigation-drawer
+      v-model="panelExpanded"
+      width="244"
+      color="pink-lighten-1"
+      :permanent="isMobile"
+    >
       <v-sheet color="pink-darken-4" height="128" width="100%">
         <v-img
           alt="Profile picture"
@@ -179,4 +198,27 @@ const clubs = [
       "https://ei.phncdn.com/videos/201908/02/239201581/original/(m=eaSaaTbaAaaaa)(mh=J9aR2b9xaLrwFiGc)12.jpg",
   },
 ];
+import { useDisplay } from "vuetify";
+
+const { name } = useDisplay();
+const isMobile = computed(() => {
+  // name is reactive and
+  // must use .value
+  switch (name.value) {
+    case "xs":
+      return false;
+    case "sm":
+      return false;
+    case "md":
+      return true;
+    case "lg":
+      return true;
+    case "xl":
+      return true;
+    case "xxl":
+      return true;
+  }
+  return false;
+});
+const panelExpanded = ref(!!isMobile);
 </script>
