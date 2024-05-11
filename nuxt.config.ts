@@ -23,4 +23,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  app: {
+    head: {
+      script: [{ src: "coi-serviceworker.min.js" }],
+    },
+  },
 });
