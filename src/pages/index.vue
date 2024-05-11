@@ -10,7 +10,7 @@
               app.
             </p>
             <iframe
-              src="/games/plugin"
+              src="/KISS/games/plugin"
               width="800"
               height="600"
               frameborder="0"
