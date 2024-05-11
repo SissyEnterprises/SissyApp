@@ -108,19 +108,43 @@
           placeholder="Search"
         ></v-text-field>
       </v-responsive>
+
+      <v-tooltip :text="rightPanelExpanded ? 'Collapse' : 'Expand'">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            :icon="rightPanelExpanded ? 'mdi-arrow-right' : 'mdi-arrow-left'"
+            @click="rightPanelExpanded = !rightPanelExpanded"
+          >
+          </v-btn>
+        </template>
+      </v-tooltip>
     </v-app-bar>
 
     <v-main>
       <NuxtPage></NuxtPage>
     </v-main>
 
-    <v-navigation-drawer location="right" color="pink-lighten-3">
+    <v-navigation-drawer
+      v-model="rightPanelExpanded"
+      location="right"
+      color="pink-lighten-3"
+    >
       <v-list nav density="compact">
+        <v-list-item
+          v-for="n in 2"
+          :key="n"
+          :title="`Teacher ${n}`"
+          link
+          prependAvatar="https://ei.phncdn.com/videos/201908/02/239201581/original/(m=eaSaaTbaAaaaa)(mh=J9aR2b9xaLrwFiGc)12.jpg"
+        ></v-list-item>
+        <v-divider class="mx-2 my-3"></v-divider>
         <v-list-item
           v-for="n in 5"
           :key="n"
           :title="`Student ${n}`"
           link
+          prependAvatar="https://i.ebayimg.com/images/g/aK0AAOSwEelgRsa-/s-l1200.webp"
         ></v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -221,4 +245,5 @@ const isMobile = computed(() => {
   return false;
 });
 const panelExpanded = ref(!!isMobile);
+const rightPanelExpanded = ref(!isMobile);
 </script>
