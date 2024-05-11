@@ -10,7 +10,7 @@
               app.
             </p>
             <iframe
-              src="https://sissyenterprises.github.io/KissPlugin/"
+              src="/games/plugin/"
               width="800"
               height="600"
               frameborder="0"
