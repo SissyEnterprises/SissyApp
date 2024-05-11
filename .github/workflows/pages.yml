@@ -31,11 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          echo "manager=bun" >> $GITHUB_OUTPUT
-          echo "command=install" >> $GITHUB_OUTPUT
+        with:
+          lfs: true
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
@@ -57,9 +54,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: bun install
       - name: Static HTML export with Nuxt
-        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
+        run: bun run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
