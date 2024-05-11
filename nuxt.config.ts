@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
+    baseURL: "/KISS/",
     head: {
       script: [{ src: "coi-serviceworker.min.js" }],
     },
