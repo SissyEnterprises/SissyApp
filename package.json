@@ -7,16 +7,28 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "nuxt": "nuxt",
+    "nuxi": "nuxi"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@netlify/functions": "^2.6.3",
     "@sentry/vue": "^7.114.0",
+    "@types/serviceworker": "^0.0.86",
+    "@vite-pwa/nuxt": "^0.7.0",
     "nuxt": "^3.11.2",
     "sass": "^1.77.0",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "workbox": "^0.0.0",
+    "workbox-background-sync": "^7.1.0",
+    "workbox-build": "^7.1.0",
+    "workbox-expiration": "^7.1.0",
+    "workbox-precaching": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0",
+    "workbox-window": "^7.1.0"
   },
   "devDependencies": {
     "vite-plugin-vuetify": "^2.0.3",

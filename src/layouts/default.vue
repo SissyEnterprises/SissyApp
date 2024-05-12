@@ -225,25 +225,36 @@ const clubs = [
 import { useDisplay } from "vuetify";
 
 const { name } = useDisplay();
+const panelExpanded = ref(false);
+const rightPanelExpanded = ref(false);
 const isMobile = computed(() => {
   // name is reactive and
   // must use .value
   switch (name.value) {
     case "xs":
-      return false;
+      panelExpanded.value = false;
+      rightPanelExpanded.value = false;
+      return true;
     case "sm":
-      return false;
+      panelExpanded.value = false;
+      rightPanelExpanded.value = false;
+      return true;
     case "md":
+      panelExpanded.value = true;
+      rightPanelExpanded.value = false;
       return true;
     case "lg":
-      return true;
+      panelExpanded.value = true;
+      rightPanelExpanded.value = true;
+      return false;
     case "xl":
-      return true;
+      panelExpanded.value = true;
+      rightPanelExpanded.value = true;
+      return false;
     case "xxl":
-      return true;
+      panelExpanded.value = true;
+      rightPanelExpanded.value = true;
+      return false;
   }
-  return false;
 });
-const panelExpanded = ref(!!isMobile);
-const rightPanelExpanded = ref(!isMobile);
 </script>

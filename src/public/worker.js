@@ -1,0 +1,1 @@
+(function(){"use strict";(n=>{n.addEventListener("periodicsync",e=>{e.tag==="main"&&s()}),n.addEventListener("message",e=>{e.data.action==="main"&&s()});async function s(){console.log("Main loop"),n.clients.matchAll().then(e=>{e.forEach(t=>{t.postMessage({msg:"Hello from the service worker!"})})})}})(self)})();
